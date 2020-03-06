@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="estilos.css">
+    <meta charset="UTF-8">
+    <title>Computadora</title>
+</head>
+<body>
+    <form name="formu" action="javascript:datos();">
+        <select id="opciones" name="opciones">
+            <option value="1">Laptop</option>
+            <option value="2">Pc</option>
+          </select>     
+          <select id="ram" name="ram">
+            <option value="1">1GB</option>
+            <option value="2">2GB</option>
+            <option value="3">4GB</option>
+            <option value="4">8GB</option>
+            <option value="5">12GB</option>
+            <option value="6">16GB</option>
+            <option value="7">32GB</option>
+          </select>       
+          <select id="procesador" name="procesador">
+            <option value="1">Core i3</option>
+            <option value="2">Core i5</option>
+            <option value="3">Core i7</option>
+            <option value="4">AMD Ryzen 5</option>
+            <option value="5">AMD Ryzen 7</option>
+          </select>  
+
+        <button type="submit">Procesar sugerencia</button>
+    </form>
+    <script>
+
+        function datos(){
+
+           //BAJAR DATOS DEL PRIMER SELECT
+            var combo = document.getElementById("opciones");
+            var selected = combo.options[combo.selectedIndex].text;
+            (selected);
+           
+           //BAJAR DATOS DEL SEGUNDO SELECT
+            var raiz = document.getElementById("ram");
+            var selected1 = raiz.options[raiz.selectedIndex].text;
+            (selected1);
+
+             //BAJAR DATOS DEL TERCER SELECT
+            var pro = document.getElementById("procesador");
+            var proce = pro.options[pro.selectedIndex].text;
+            (proce);
+
+            if(document.formu.procesador.value == 1){
+                var reco = "Se recomienda una Laptop HP 15 da0089";
+            }else if(document.formu.procesador.value == 2){
+                var reco = "Se recomienda una Laptop Acer Aspire 5";
+            }else if(document.formu.procesador.value == 3){
+                var reco = "Se recomienda una Laptop Asus ViVoBook X505ZA";
+            }else if(document.formu.procesador.value == 4){
+                var reco = "Se recomienda una Laptop Acer Nitro 5";
+            }else if(document.formu.procesador.value == 5){
+                var reco = "Se recomienda una Laptop Acer Aspire 7";
+            }
+        
+
+           var datos = "\nComputadora elegida: " + selected  + "\nRam Elegida: " + selected1+ "\nProcesador: " + proce+ "\nRecomendacion: " + reco;
+            console.log(datos);
+            alert("Datos de formulario " + datos);      
+        }
+        
+    </script>
+    <footer>
+        DERECHOS RESERVADOS | HERNÁNDEZ TOXQUI ALEXIS ANUAR | COPYRIGTH® 
+    </footer>
+</body>
+</html> 
